@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* TODO */
+// Add link colors for all themes
+// add pop theme
+// Add semantic colors
+// Add mobile heading sizes (and maybe revisit mobile text sizes)
+
+
+/*  Neutral Colors*/
+$n0: #fff;
+$n1: #f4f4f4;
+$n2: #d4d4d4;
+$n3: #a4a4a4;
+$n4: #656565;
+$n5: #202020;
+
+/*  Primary Colors*/
+$p1: #E2F6F3;
+$p2: #A5E5E5;
+$p3: #47B5C4;
+$p4: #006A84;
+$p5: #00445F;
+
+/*  Secondary Colors*/
+$s1: #FFF5A8;
+$s2: #FFDF5E;
+$s3: #FFA705;
+$s4: #DD660D;
+$s5: #AA3812;
+
+/* Fonts */
+$display-font: "DM Serif Display", serif;
+$body-font: "DM Sans", sans-serif;
+
+/* Semantic Colors */
+// $success: #000;
+// $warning: #000;
+// $error: #000;
+// $info: #000;
+
+$max-width: 1200px;
+$section-padding: 24px;
+$card-padding: 16px;
+$border-weight: 1px;
+
+body{
+    font-family: $body-font;
+    color: $p5;
+    font-size:20px;
+}
+
+/* Typography */
+.headingLg{
+    font-family: $display-font;
+    font-size: 40px;
+}
+.headingMd{
+    font-family: $display-font;
+    font-size: 32px;
+
+}
+.headingSm{
+    font-family: $body-font;
+    font-size: 24px;
+    font-weight:600;
+}
+// THIS STYLE IS DEFAULT (see body)
+// .textLg{
+//     font-size: 20px;
+//     font-family: $body-font;
+// }
+.textMd{
+    font-size: 18px;
+}
+.textSm{
+    font-size: 16px;
+}
+
+.textLabel{
+    font-size: 14px;
+}
+.textHelper{
+    font-size: 14px;
+    font-weight:600;
+}
+
+/* Themes */
+.lightTheme{
+    color: $n5;
+    background-color: $n0;
+}
+.neutralTheme{
+    color: $n5;
+    background-color: $n1;
+
+}
+.darkTheme{
+    color: $n0;
+    background-color: $n5;
+
+}

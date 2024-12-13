@@ -2,7 +2,7 @@
  * @type {import('tinacms').Collection}
  */
 export default {
-  label: "Page Content",
+  label: "Pages",
   name: "page",
   path: "content/page",
   format: "mdx",

@@ -1,0 +1,82 @@
+@use "themes" as *;
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; // override default
+}
+
+header {
+    width: 100%;
+    padding-left:$section-padding;
+    padding-right:$section-padding;
+    padding-top:16px; //magic number
+    padding-bottom:16px; //magic number
+    border-bottom: $border-weight solid $n2;
+    background-color: $n1;
+    .wrapper{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        background-color:white
+    }
+    ul{
+        padding:0; // override default
+        margin:0; // override default
+        display:flex;
+        gap:24px; //magic number
+        li{
+            display:inline;
+        }
+    }
+    
+}
+
+section {
+    width: 100%;
+    padding: $section-padding;
+    margin: 0 auto;
+    /* Desktop */
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: $section-padding;
+
+    #socials {
+        padding: 0; // override default
+
+        li {
+            display: inline;
+        }
+    }
+
+    #legal {
+        padding: 0; // override default
+
+        li {
+            display: inline;
+
+            &::after {
+                content: ' | ';
+            }
+
+            &:last-child::after {
+                content: '';
+            }
+        }
+    }
+}

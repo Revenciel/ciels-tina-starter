@@ -1,47 +1,22 @@
 This is a [Tina CMS](https://tina.io/) project.
 
-## Local Development
+# New Tina Starter
+My TinaCMS Starter
+* Using SCSS for organized styling
+* Theme easily configurable using _themes.scss, with all (or most) colors, fonts, and spacing using variables
+* Starter components that I find useful for any small business or non-profit website, including:
+    * Header component with user-friendly process for adding links
+    * Footer
+    * _More components coming soon_
 
-Install the project's dependencies:
 
-> [!NOTE]  
-> [Do you know the best package manager for Node.js?](https://www.ssw.com.au/rules/best-package-manager-for-node/) Using the right package manager can greatly enhance your development workflow. We recommend using pnpm for its speed and efficient handling of dependencies. Learn more about why pnpm might be the best choice for your projects by checking out this rule from SSW.
+## TODO 
+* fix type error in layout.tsx
+* Implement visual editing
+* Build out blog functionality, components, and styling
+* Contact page functionality, components, and styling
+* add roadmap for future components
 
-```
-pnpm install
-```
+## Getting Started
+Follow Tina's [Getting Started Guide](https://tina.io/docs/getting-started/)
 
-Run the project locally:
-
-```
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### Building the Starter Locally (Using the hosted content API)
-
-Replace the `.env.example`, with `.env`
-
-```
-NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
-TINA_TOKEN=<get this from the project you create at app.tina.io>
-NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
-```
-
-Build the project:
-
-```bash
-pnpm build
-```
-
-## Learn More
-
-To learn more about Tina, take a look at the following resources:
-
-- [Tina Docs](https://tina.io/docs)
-- [Getting started](https://tina.io/docs/setup-overview/)
-
-You can check out [Tina Github repository](https://github.com/tinacms/tinacms) - your feedback and contributions are welcome!
-
-## [Deploy on Vercel](https://tina.io/guides/tina-cloud/add-tinacms-to-existing-site/deployment/)
