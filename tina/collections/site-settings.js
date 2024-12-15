@@ -1,6 +1,9 @@
 /**
  * @type {import('tinacms').Collection}
  */
+
+import { internalLink, externalLink } from "../../app/fieldComponents/linkSelector";
+
 export default {
     name: "siteConfig",
         label: "Site Settings",
@@ -33,159 +36,158 @@ export default {
             label: "Favicon",
             description: "The favicon is the small icon that appears on the browser tab. It is usually the logo, or a simplified version of the logo.",
           },
-          {
-            type: "string",
-            name: "tagline",
-            label: "Tagline or Motto",
+          { // if I update this, I will need to update any components that use it, and possibly fieldComponents.tsx too
+            type: "object",
+            label: "Menu Links",
+            name: "navLinks",
+            description: "If you delete a page that is linked in this menu, you must also delete or update the menu link here!",
+            list: true,
             ui: {
-              component: 'hidden',
-            }
+              itemProps: (item) => {
+                if (item.linkType === "internal") {
+                  if (item?.relativePath != null) {
+                    var pageName = item?.relativePath
+                      .substring(0, item?.relativePath.lastIndexOf("."))
+                      .split("/");
+                    pageName = pageName[pageName.length - 1];
+                    return { label: pageName };
+                  }
+                  return { label: "Menu Link" }
+                }
+                if (item?.anchor == null) {
+                  return { label: "Menu Link" }
+                }
+                return { label: item?.anchor };
+              },
+              defaultItem: {
+                linkType: "internal",
+              },
+            },
+
+            fields: [
+              {
+                type: "string",
+                name: "linkType",
+                label: "Destination",
+                description: "Is this link internal (goes to a page on your website) or external (goes to a different website)?",
+                options: [
+                  {
+                    label: "Internal",
+                    value: "internal"
+                  },
+                  {
+                    label: "External",
+                    value: "external",
+                  },
+                ],
+                ui: {
+                  component: "button-toggle",
+                },
+              },
+              {
+                type: "reference",
+                name: "relativePath",
+                label: "Page to link to",
+                collections: ['page'],
+                ui: {
+                  component: internalLink,
+                },
+              },
+              {
+                type: "string",
+                name: "url",
+                label: "Link URL",
+                ui: {
+                  component: externalLink,
+                },
+              },
+              {
+                type: "string",
+                name: "anchor",
+                required: true,
+                label: "Display Text",
+              },
+            ],
           },
-          // {
-          //   type: "object",
-          //   label: "Menu Links",
-          //   name: "navLinks",
-          //   description: "If you delete a page that is linked in this menu, you must also delete or update the menu link here!",
-          //   list: true,
-          //   ui: {
-          //     itemProps: (item) => {
-          //       if (item.linkType === "internal") {
-          //         if (item?.relativePath != null) {
-          //           var pageName = item?.relativePath
-          //             .substring(0, item?.relativePath.lastIndexOf("."))
-          //             .split("/");
-          //           pageName = pageName[pageName.length - 1];
-          //           return { label: pageName };
-          //         }
-          //         return { label: "Menu Link" }
-          //       }
-          //       if (item?.anchor == null) {
-          //         return { label: "Menu Link" }
-          //       }
-          //       return { label: item?.anchor };
-          //     },
-          //     defaultItem: {
-          //       linkType: "internal",
-          //     },
-          //   },
+          { // if I update this, I will need to update any components that use it, and possibly fieldComponents.tsx too
+            type: 'object',
+            name: 'cta',
+            label: 'Call to Action',
+            description: 'Optional',
+            ui: {
+              itemProps: (item) => {
+                if (item.linkType === "internal") {
+                  if (item?.relativePath != null) {
+                    var pageName = item?.relativePath
+                      .substring(0, item?.relativePath.lastIndexOf("."))
+                      .split("/");
+                    pageName = pageName[pageName.length - 1];
+                    return { label: pageName };
+                  }
+                  return { label: "Menu Link" }
+                }
+                if (item?.anchor == null) {
+                  return { label: "Menu Link" }
+                }
+                return { label: item?.anchor };
+              },
+              defaultItem: {
+                linkType: "internal",
+              },
+            },
 
-          //   fields: [
-          //     {
-          //       type: "string",
-          //       name: "linkType",
-          //       label: "Destination",
-          //       description: "Is this link internal (goes to a page on your website) or external (goes to a different website)?",
-          //       options: [
-          //         {
-          //           label: "Internal",
-          //           value: "internal"
-          //         },
-          //         {
-          //           label: "External",
-          //           value: "external",
-          //         },
-          //       ],
-          //       ui: {
-          //         component: "button-toggle",
-          //       },
-          //     },
-          //     {
-          //       type: "reference",
-          //       name: "relativePath",
-          //       label: "Page to link to",
-          //       collections: ['page'],
-          //       ui: {
-          //         component: internalLink,
-          //       },
-          //     },
-          //     {
-          //       type: "string",
-          //       name: "url",
-          //       label: "Link URL",
-          //       ui: {
-          //         component: externalLink,
-          //       },
-          //     },
-          //     {
-          //       type: "string",
-          //       name: "anchor",
-          //       required: true,
-          //       label: "Display Text",
-          //     },
-          //   ],
-          // },
-          // {
-          //   type: 'object',
-          //   name: 'cta',
-          //   label: 'Call to Action',
-          //   description: 'Optional',
-          //   ui: {
-          //     itemProps: (item) => {
-          //       if (item.linkType === "internal") {
-          //         if (item?.relativePath != null) {
-          //           var pageName = item?.relativePath
-          //             .substring(0, item?.relativePath.lastIndexOf("."))
-          //             .split("/");
-          //           pageName = pageName[pageName.length - 1];
-          //           return { label: pageName };
-          //         }
-          //         return { label: "Menu Link" }
-          //       }
-          //       if (item?.anchor == null) {
-          //         return { label: "Menu Link" }
-          //       }
-          //       return { label: item?.anchor };
-          //     },
-          //     defaultItem: {
-          //       linkType: "internal",
-          //     },
-          //   },
-
-          //   fields: [
-          //     {
-          //       type: "string",
-          //       name: "linkType",
-          //       label: "Destination",
-          //       description: "Is this link internal (goes to a page on your website) or external (goes to a different website)?",
-          //       options: [
-          //         {
-          //           label: "Internal",
-          //           value: "internal"
-          //         },
-          //         {
-          //           label: "External",
-          //           value: "external",
-          //         },
-          //       ],
-          //       ui: {
-          //         component: "button-toggle",
-          //       },
-          //     },
-          //     {
-          //       type: "reference",
-          //       name: "relativePath",
-          //       label: "Page to link to",
-          //       collections: ['page'],
-          //       ui: {
-          //         component: internalLink,
-          //       },
-          //     },
-          //     {
-          //       type: "string",
-          //       name: "url",
-          //       label: "Link URL",
-          //       ui: {
-          //         component: externalLink,
-          //       },
-          //     },
-          //     {
-          //       type: "string",
-          //       name: "anchor",
-          //       required: true,
-          //       label: "Display Text",
-          //     },
-          //   ],
-          // },
+            fields: [
+              {
+                type: "boolean",
+                name: "showCTA",
+                label: "Display call to action",
+                description: "Add a button link to your website's header.",
+                default: false,
+              },
+              {
+                type: "string",
+                name: "linkType",
+                label: "Destination",
+                description: "Is this link internal (goes to a page on your website) or external (goes to a different website)?",
+                options: [
+                  {
+                    label: "Internal",
+                    value: "internal"
+                  },
+                  {
+                    label: "External",
+                    value: "external",
+                  },
+                ],
+                ui: {
+                  component: "button-toggle",
+                },
+              },
+              {
+                type: "reference",
+                name: "relativePath",
+                label: "Page to link to",
+                collections: ['page'],
+                ui: {
+                  component: internalLink,
+                },
+              },
+              {
+                type: "string",
+                name: "url",
+                label: "Link URL",
+                ui: {
+                  component: externalLink,
+                },
+              },
+              {
+                type: "string",
+                name: "anchor",
+                required: true,
+                label: "Display Text",
+              },
+            ],
+          },
           {
             type: "object",
             label: "Footer",

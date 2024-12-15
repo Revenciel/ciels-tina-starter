@@ -1,22 +1,40 @@
 {
-    "siteTitle": "Fabuloso, Inc.",
-    "logo": "/uploads/Logo.png",
-    "favicon": "/uploads/logo_favicon_50px.png",
-    "tagline": "What You Fill With Determines How You Feel",
-    "footer": {
-      "socials": [
-        {
-          "platform": "Facebook",
-          "link": "https://www.facebook.com/profile.php?id=100067155472067",
-          "icon": "/uploads/icon-facebook.256x256.png"
-        },
-        {
-          "platform": "Instagram",
-          "link": "https://www.instagram.com/change_your_palate/",
-          "icon": "/uploads/icon-instagram.256x256.png"
-        }
-      ],
-      "logo": "/uploads/Logo.png",
-      "copyright": "Fabuloso, Inc."
+  "tagline": "What You Fill With Determines How You Feel",
+  "siteTitle": "Fabuloso, Inc.",
+  "logo": "/uploads/Logo.png",
+  "favicon": "/uploads/logo_favicon_50px.png",
+  "navLinks": [
+    {
+      "linkType": "internal",
+      "relativePath": "content/page/newpage.mdx",
+      "anchor": "New Page!"
+    },
+    {
+      "linkType": "internal",
+      "relativePath": "content/page/about.mdx",
+      "anchor": "About!"
     }
+  ],
+  "cta": {
+    "showCTA": true,
+    "linkType": "internal",
+    "relativePath": "content/page/home.mdx",
+    "anchor": "link"
+  },
+  "footer": {
+    "socials": [
+      {
+        "platform": "Facebook",
+        "link": "https://www.facebook.com/profile.php?id=100067155472067",
+        "icon": "/uploads/icon-facebook.256x256.png"
+      },
+      {
+        "platform": "Instagram",
+        "link": "https://www.instagram.com/change_your_palate/",
+        "icon": "/uploads/icon-instagram.256x256.png"
+      }
+    ],
+    "logo": "/uploads/Logo.png",
+    "copyright": "Fabuloso, Inc."
   }
+}

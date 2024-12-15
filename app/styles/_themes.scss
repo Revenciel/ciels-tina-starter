@@ -30,61 +30,32 @@ $s3: #FFA705;
 $s4: #DD660D;
 $s5: #AA3812;
 
-/* Fonts */
-$display-font: "DM Serif Display", serif;
-$body-font: "DM Sans", sans-serif;
-
 /* Semantic Colors */
 // $success: #000;
 // $warning: #000;
 // $error: #000;
 // $info: #000;
 
+/* Spacing and Layout */
 $max-width: 1200px;
 $section-padding: 24px;
 $card-padding: 16px;
 $border-weight: 1px;
+$button-padding: 12px 24px;
 
-body{
-    font-family: $body-font;
-    color: $p5;
-    font-size:20px;
-}
+/* Corner Radii */
+$buttonCorner: 999px;
+$cardCorner: 16px;
 
 /* Typography */
-.headingLg{
-    font-family: $display-font;
-    font-size: 40px;
-}
-.headingMd{
-    font-family: $display-font;
-    font-size: 32px;
-
-}
-.headingSm{
-    font-family: $body-font;
-    font-size: 24px;
-    font-weight:600;
-}
-// THIS STYLE IS DEFAULT (see body)
-// .textLg{
-//     font-size: 20px;
-//     font-family: $body-font;
-// }
-.textMd{
-    font-size: 18px;
-}
-.textSm{
-    font-size: 16px;
-}
-
-.textLabel{
-    font-size: 14px;
-}
-.textHelper{
-    font-size: 14px;
-    font-weight:600;
-}
+$headingLg: bold 40px "DM Serif Display", serif;
+$headingMd: bold 32px "DM Serif Display", serif;
+$headingSm: bold 24px "DM Sans", sans-serif;
+$textLg: 20px "DM Sans", sans-serif;
+$textMd: 18px "DM Sans", sans-serif;
+$textSm: 16px "DM Sans", sans-serif;
+$textLabel: bold 14px "DM Sans", sans-serif;
+$textHelper: 14px "DM Sans", sans-serif;
 
 /* Themes */
 .lightTheme{

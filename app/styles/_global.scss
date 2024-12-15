@@ -1,6 +1,6 @@
 @use "themes" as *;
-
-
+@use "cta" as *;
+@use "header" as *;
 
 *,
 *:before,
@@ -10,32 +10,8 @@
 
 body {
     margin: 0; // override default
-}
-
-header {
-    width: 100%;
-    padding-left:$section-padding;
-    padding-right:$section-padding;
-    padding-top:16px; //magic number
-    padding-bottom:16px; //magic number
-    border-bottom: $border-weight solid $n2;
-    background-color: $n1;
-    .wrapper{
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        background-color:white
-    }
-    ul{
-        padding:0; // override default
-        margin:0; // override default
-        display:flex;
-        gap:24px; //magic number
-        li{
-            display:inline;
-        }
-    }
-    
+    font: $textLg;
+    color: $p5;
 }
 
 section {
@@ -79,4 +55,42 @@ footer {
             }
         }
     }
+}
+
+.headingLg {
+    font: $headingLg;
+}
+
+.headingMd {
+    font: $headingMd;
+
+}
+
+.headingSm {
+    font: $headingSm;
+}
+
+// THIS STYLE IS DEFAULT (see body)
+.textLg {
+    font: $textLg;
+}
+
+.textMd {
+    font: $textMd;
+}
+
+.textSm {
+    font: $textSm;
+}
+
+.textLabel {
+    font: $textLabel;
+}
+
+.textHelper {
+    font: $textHelper;
+}
+
+.hidden {
+    display: none;
 }
