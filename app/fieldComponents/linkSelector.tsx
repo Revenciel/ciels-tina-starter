@@ -55,7 +55,7 @@ export function linkDestination(link: any) {
     if (link.linkType === "internal") {
         let relativePath = link.relativePath.substring(13).replace('.mdx', '');
         //This magic number comes from the character count of the domain name
-        // (and possibly if there is a parent page that would affect it? unsure)
+        //JK I think it comes from the character count of the file path to the page
         // I should find a way to do this dynamically
 
         //Use absolute links if using Cloudflare to host, to address trailing slashes issue

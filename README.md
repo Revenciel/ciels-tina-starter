@@ -12,6 +12,7 @@ This is a [Tina CMS](https://tina.io/) project.
 ## TODO
 
 - fix routing issue with home page link showing /home
+- Make it so nav links aren't links and have different styling when they go to the current page.
 - Fix the way link destinations are generated (linkSelector.tsx)
 - Implement visual editing
 - Build out blog functionality, components, and styling

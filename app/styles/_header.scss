@@ -19,5 +19,16 @@ header {
         display: flex;
         align-items: center;
         gap: 24px; //magic number
+        a {
+            text-decoration: none;
+            color: $p4;
+            &:hover {
+                color: $p3;
+            }
+        }
     }
+}
+
+.active {
+    color: red !important;
 }

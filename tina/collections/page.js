@@ -13,6 +13,12 @@ export default {
       type: "rich-text",
       isBody: true,
     },
+    {
+      name: "title",
+      label: "Title",
+      type: "string",
+      // required: true,
+    },
   ],
   ui: {
     router: ({ document }) => {
