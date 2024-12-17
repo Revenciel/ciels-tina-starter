@@ -34,14 +34,16 @@ export const internalLink = (props) => {
 
 // UTILITY FUNCTIONS (for use in .tsx component files)
 export function showCTA(){
-    const cta = siteData?.cta as { linkType: string; relativePath?: string; url?: string; anchor: string };
-
+    const cta = siteData?.cta as { showCTA: boolean; linkType: string; relativePath?: string; url?: string; anchor: string };
+    if (!cta.showCTA) {
+      return "none";
+    }
     if (cta.linkType === "internal" && cta.relativePath) {
         return "";
     } else if (cta.linkType === "external" && cta.url) {
         return "";
     }
-    return "hidden";
+    return "none";
 }
 
 export function linkTarget(link: any) {

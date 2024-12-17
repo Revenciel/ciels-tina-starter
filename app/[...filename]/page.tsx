@@ -1,14 +1,28 @@
 import ClientPage from "./client-page";
 import client from "../../tina/__generated__/client";
 import Layout from "../Layout/Layout";
+import siteData from "../../content/site-settings/index.json";
 
-export async function generateStaticParams() {
-  const pages = await client.queries.pageConnection();
-  const paths = pages.data?.pageConnection?.edges?.map((edge) => ({
-    filename: edge?.node?._sys.breadcrumbs,
-  }));
+import type { Metadata, ResolvingMetadata } from "next";
 
-  return paths || [];
+export async function generateMetadata({
+  params,
+}: {
+  params: { filename: string[] };
+  parent: ResolvingMetadata;
+}): Promise<Metadata> {
+  const data = await client.queries.page({
+    relativePath: `${params.filename}.mdx`,
+  });
+
+  let title = "";
+if (data.data.page.title){
+    title = data.data.page.title + " | ";
+}
+
+  return {
+    title: title + siteData.siteTitle,
+  };
 }
 
 export default async function Page({
@@ -26,15 +40,3 @@ export default async function Page({
     </Layout>
   );
 }
-
-// page title export
-// export async function getPageTitle({
-//   params,
-// }: {
-//   params: { title: string[] };
-// }){
-//   const data = await client.queries.page({
-//     relativePath: `${params.filename}.mdx`,
-//   });
-//   return data.data.page.title;
-// }
