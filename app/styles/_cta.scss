@@ -1,0 +1,26 @@
+@use "themes" as *;
+
+@mixin cta {
+    padding: $button-padding;
+    text-decoration: none;
+    border-radius: $buttonCorner;
+    font: $headingSm;
+}
+
+//applied directly to <a> tag
+.primaryCTA {
+    background-color: $s5;
+    color: $n0;
+    @include cta;
+}
+
+.secondaryCTA {
+    background-color: $n5;
+    color: $n0;
+    @include cta;
+}
+
+.tertiaryCTA {
+    color: $s5;
+    @include cta;
+}

@@ -1,25 +1,19 @@
-import Link from "next/link";
 import React from "react";
+import "./styles/styles.scss";
 
-export default function RootLayout({
+// layout.tsx ~ page.tsx
+// Meta.tsx ~  Layout.tsx
+// layout-context.tsx ~ layout-context.tsx
+
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          margin: "3rem",
-        }}
-      >
-        <header>
-          <Link href="/">Home</Link>
-          {" | "}
-          <Link href="/posts">Posts</Link>
-        </header>
-        <main>{children}</main>
-      </body>
+      <body className="lightTheme">{children}</body>
     </html>
   );
 }

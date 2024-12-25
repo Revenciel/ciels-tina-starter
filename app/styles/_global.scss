@@ -1,0 +1,103 @@
+@use "themes" as *;
+@use "cta" as *;
+@use "header" as *;
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; // override default
+    font: $textLg;
+    color: $p5;
+}
+
+section {
+    width: 100%;
+    padding: $section-padding;
+    margin: 0 auto;
+    /* Desktop */
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: $section-padding;
+
+    #socials {
+        padding: 0; // override default
+
+        li {
+            display: inline;
+        }
+    }
+
+    #legal {
+        padding: 0; // override default
+
+        li {
+            display: inline;
+
+            &::after {
+                content: ' | ';
+            }
+
+            &:last-child::after {
+                content: '';
+            }
+        }
+    }
+}
+
+.headingLg {
+    font: $headingLg;
+}
+
+.headingMd {
+    font: $headingMd;
+
+}
+
+.headingSm {
+    font: $headingSm;
+}
+
+// THIS STYLE IS DEFAULT (see body)
+.textLg {
+    font: $textLg;
+}
+
+.textMd {
+    font: $textMd;
+}
+
+.textSm {
+    font: $textSm;
+}
+
+.textLabel {
+    font: $textLabel;
+}
+
+.textHelper {
+    font: $textHelper;
+}
+
+.hidden,
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty {
+    display: none;
+}

@@ -1,0 +1,41 @@
+{
+  "tagline": "What You Fill With Determines How You Feel",
+  "siteTitle": "Fabuloso, Inc.",
+  "logo": "/uploads/logoipsum-261.svg",
+  "favicon": "/uploads/favicon-32x32.png",
+  "navLinks": [
+    {
+      "linkType": "internal",
+      "relativePath": "content/page/newpage.mdx",
+      "anchor": "New Page!"
+    },
+    {
+      "linkType": "internal",
+      "relativePath": "content/page/about.mdx",
+      "anchor": "About!"
+    }
+  ],
+  "cta": {
+    "showCTA": false,
+    "linkType": "internal",
+    "relativePath": "content/page/home.mdx",
+    "url": "https://www.example.com",
+    "anchor": "link"
+  },
+  "footer": {
+    "socials": [
+      {
+        "platform": "Facebook",
+        "link": "https://www.facebook.com/profile.php?id=100067155472067",
+        "icon": "/uploads/icon-facebook.256x256.png"
+      },
+      {
+        "platform": "Instagram",
+        "link": "https://www.instagram.com/change_your_palate/",
+        "icon": "/uploads/icon-instagram.256x256.png"
+      }
+    ],
+    "logo": "/uploads/Logo.png",
+    "copyright": "Fabuloso, Inc."
+  }
+}

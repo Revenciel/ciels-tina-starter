@@ -1,0 +1,34 @@
+@use "themes" as *;
+
+header {
+    width: 100%;
+    padding-left: $section-padding;
+    padding-right: $section-padding;
+    padding-top: 16px; //magic number
+    padding-bottom: 16px; //magic number
+    border-bottom: $border-weight solid $n2;
+    background-color: $n1; //temp
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 24px; //magic number
+        a {
+            text-decoration: none;
+            color: $p4;
+            &:hover {
+                color: $p3;
+            }
+        }
+    }
+}
+
+.active {
+    color: red !important;
+}

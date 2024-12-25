@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* TODO */
+// Add link colors for all themes
+// add pop theme
+// Add semantic colors
+// Add mobile heading sizes (and maybe revisit mobile text sizes)
+
+
+/*  Neutral Colors*/
+$n0: #fff;
+$n1: #f4f4f4;
+$n2: #d4d4d4;
+$n3: #a4a4a4;
+$n4: #656565;
+$n5: #202020;
+
+/*  Primary Colors*/
+$p1: #E2F6F3;
+$p2: #A5E5E5;
+$p3: #47B5C4;
+$p4: #006A84;
+$p5: #00445F;
+
+/*  Secondary Colors*/
+$s1: #FFF5A8;
+$s2: #FFDF5E;
+$s3: #FFA705;
+$s4: #DD660D;
+$s5: #AA3812;
+
+/* Semantic Colors */
+// $success: #000;
+// $warning: #000;
+// $error: #000;
+// $info: #000;
+
+/* Spacing and Layout */
+$max-width: 1200px;
+$section-padding: 24px;
+$card-padding: 16px;
+$border-weight: 1px;
+$button-padding: 12px 24px;
+
+/* Corner Radii */
+$buttonCorner: 999px;
+$cardCorner: 16px;
+
+/* Typography */
+$headingLg: bold 40px "DM Serif Display", serif;
+$headingMd: bold 32px "DM Serif Display", serif;
+$headingSm: bold 24px "DM Sans", sans-serif;
+$textLg: 20px "DM Sans", sans-serif;
+$textMd: 18px "DM Sans", sans-serif;
+$textSm: 16px "DM Sans", sans-serif;
+$textLabel: bold 14px "DM Sans", sans-serif;
+$textHelper: 14px "DM Sans", sans-serif;
+
+/* Themes */
+.lightTheme{
+    color: $n5;
+    background-color: $n0;
+}
+.neutralTheme{
+    color: $n5;
+    background-color: $n1;
+
+}
+.darkTheme{
+    color: $n0;
+    background-color: $n5;
+
+}
