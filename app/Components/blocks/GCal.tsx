@@ -1,14 +1,15 @@
 import React from "react";
 import type { Template } from "tinacms";
 import { PageBlocksGCal } from "../../../tina/__generated__/types";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const GCal = ({ data }: { data: PageBlocksGCal }) => {
   return (
     <section className={"gCal" + " "}>
       <div className="wrapper">
         <hgroup>
-          <h2>{data?.heading}</h2>
-          <p>{data?.subheading}</p>
+          {/* <h2>{data?.heading}</h2> */}
+          {/* <TinaMarkdown content={data?.subheading} /> */}
         </hgroup>
         <div className="gcal-container">
           {/* <iframe
@@ -36,14 +37,13 @@ export const gCalBlockSchema: Template = {
       label: "Heading",
       name: "heading",
       description: "Optional - will display a heading above the calendar.",
-      // toolbarOverride: ["bold", "italic", "link",],
     },
     {
-      type: "string",
+      type: "rich-text",
       label: "Subheading",
       name: "subheading",
       description: "Optional - will display a subheading below the heading.",
-      // toolbarOverride: ["bold", "italic", "link"],
+      toolbarOverride: ["bold", "italic", "link"],
     },
     // {
     //   name: "theme",

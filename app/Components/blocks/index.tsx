@@ -22,6 +22,8 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   );
 };
 
+
+
 const Block = (block: PageBlocks) => {
   switch (block.__typename) {
     case "PageBlocksGCal":

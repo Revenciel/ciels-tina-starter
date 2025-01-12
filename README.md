@@ -14,8 +14,9 @@ This is a [Tina CMS](https://tina.io/) project.
 - [ ] fix routing issue with home page link showing /home
 - [ ] Make it so nav links have different styling and don't link when they go to the current page.
 - [ ] Fix the way link destinations are generated (linkSelector.tsx)
-- [ ] Implement visual editing
-- [ ] Implement block-based editing
+- [ ] Implement visual editing click-to-edit
+- [x] Implement block-based editing
+- [ ] implement auto-generated file name when creating new pages
 - Block components
     - [ ] Add Google Calendar block
     - [ ] Flex Content block
