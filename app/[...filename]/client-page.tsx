@@ -16,7 +16,7 @@ interface ClientPageProps {
 export default function ClientPage(props: ClientPageProps) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({ ...props });
-
+  
   // const content = data.page.body;
   return <Blocks {...data?.page} />;
 }

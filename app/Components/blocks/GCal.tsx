@@ -1,6 +1,5 @@
 import React from "react";
 import type { Template } from "tinacms";
-
 import { PageBlocksGCal } from "../../../tina/__generated__/types";
 
 export const GCal = ({ data }: { data: PageBlocksGCal }) => {

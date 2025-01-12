@@ -6,8 +6,8 @@ header {
     padding-right: $section-padding;
     padding-top: 16px; //magic number
     padding-bottom: 16px; //magic number
-    border-bottom: $border-weight solid $n2;
-    background-color: $n1; //temp
+    border-bottom: $border-weight solid $n300;
+    background-color: $n100; //temp
 
     .wrapper {
         display: flex;
@@ -21,9 +21,9 @@ header {
         gap: 24px; //magic number
         a {
             text-decoration: none;
-            color: $p4;
+            color: $p700;
             &:hover {
-                color: $p3;
+                color: $p500;
             }
         }
     }

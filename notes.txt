@@ -1,0 +1,1 @@
+The turbo option in package-lock is an updated bundler, replaces webpack. When using NextJS 15+,. use turbopack instead of turbo. It's faster

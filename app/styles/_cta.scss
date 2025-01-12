@@ -9,18 +9,18 @@
 
 //applied directly to <a> tag
 .primaryCTA {
-    background-color: $s5;
+    background-color: $s900;
     color: $n0;
     @include cta;
 }
 
 .secondaryCTA {
-    background-color: $n5;
+    background-color: $n900;
     color: $n0;
     @include cta;
 }
 
 .tertiaryCTA {
-    color: $s5;
+    color: $s900;
     @include cta;
 }

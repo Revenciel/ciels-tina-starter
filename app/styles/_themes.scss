@@ -10,25 +10,25 @@
 
 /*  Neutral Colors*/
 $n0: #fff;
-$n1: #f4f4f4;
-$n2: #d4d4d4;
-$n3: #a4a4a4;
-$n4: #656565;
-$n5: #202020;
+$n100: #f5f3f7;
+$n300: #ddd6e0;
+$n500: #ada4b2;
+$n700: #66596e;
+$n900: #1e0e29;
 
 /*  Primary Colors*/
-$p1: #E2F6F3;
-$p2: #A5E5E5;
-$p3: #47B5C4;
-$p4: #006A84;
-$p5: #00445F;
+$p100: #f9f0ff;
+$p300: #ebcdff;
+$p500: #c186e8;
+$p700: #7d3aa7;
+$p900: #400365;
 
 /*  Secondary Colors*/
-$s1: #FFF5A8;
-$s2: #FFDF5E;
-$s3: #FFA705;
-$s4: #DD660D;
-$s5: #AA3812;
+$s100: #e8fcf3;
+$s300: #b5e5dd;
+$s600: #6fb7b6;
+$s700: #26646d;
+$s900: #011f27;
 
 /* Semantic Colors */
 // $success: #000;
@@ -59,16 +59,17 @@ $textHelper: 14px "DM Sans", sans-serif;
 
 /* Themes */
 .lightTheme{
-    color: $n5;
+    color: $n900;
     background-color: $n0;
+    // link colors, visisted link colors, etc....
 }
 .neutralTheme{
-    color: $n5;
-    background-color: $n1;
+    color: $n900;
+    background-color: $n100;
 
 }
 .darkTheme{
     color: $n0;
-    background-color: $n5;
+    background-color: $n900;
 
 }

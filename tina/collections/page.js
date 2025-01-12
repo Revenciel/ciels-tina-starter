@@ -3,6 +3,7 @@
  */
 
 import { gCalBlockSchema } from "../../app/Components/blocks/GCal";
+import { customContentBlockSchema } from "../../app/Components/blocks/CustomContent";
 
 export default {
   label: "Pages",
@@ -10,12 +11,12 @@ export default {
   path: "content/page",
   format: "mdx",
   fields: [
-    {
-      name: "body",
-      label: "Main Content",
-      type: "rich-text",
-      isBody: true,
-    },
+    // {
+    //   name: "body",
+    //   label: "Main Content",
+    //   type: "rich-text",
+    //   isBody: true,
+    // },
     {
       name: "title",
       label: "Title",
@@ -29,7 +30,7 @@ export default {
       type: "object",
       templates: [
         gCalBlockSchema,
-
+        customContentBlockSchema,
       ],
     },
   ],
@@ -38,7 +39,7 @@ export default {
       if (document._sys.filename === "home") {
         return `/`;
       }
-      return undefined;
+      return ("/" + document._sys.filename);
     },
   },
 };

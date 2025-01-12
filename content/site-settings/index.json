@@ -27,15 +27,15 @@
       {
         "platform": "Facebook",
         "link": "https://www.facebook.com/profile.php?id=100067155472067",
-        "icon": "/uploads/icon-facebook.256x256.png"
+        "icon": "/uploads/facebook.svg"
       },
       {
         "platform": "Instagram",
         "link": "https://www.instagram.com/change_your_palate/",
-        "icon": "/uploads/icon-instagram.256x256.png"
+        "icon": "/uploads/instagram.svg"
       }
     ],
-    "logo": "/uploads/Logo.png",
+    "logo": "/uploads/logoipsum-261.svg",
     "copyright": "Fabuloso, Inc."
   }
 }

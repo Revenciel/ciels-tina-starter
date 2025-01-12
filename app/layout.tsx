@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles/styles.scss";
 
-// layout.tsx ~ page.tsx
-// Meta.tsx ~  Layout.tsx
-// layout-context.tsx ~ layout-context.tsx
+// maybe remove this for prod? it opts out of full route cache.
+export const dynamic = 'force-dynamic';
 
 
 export default async function RootLayout({

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"next dev\"",
+    "dev": "tinacms dev -c \"next dev --turbo\"",
     "build": "tinacms build && next build",
     "build-local": "tinacms build --local --skip-indexing --skip-cloud-checks && next build",
     "start": "tinacms build && next start",
@@ -18,7 +18,7 @@
     "typescript": "5.5.2"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.6.12",
+    "@tinacms/cli": "^1.8.0",
     "@types/node": "^22.10.1",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.18"
