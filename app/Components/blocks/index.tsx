@@ -7,7 +7,6 @@ import { CustomContent } from "./CustomContent";
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   return (
     <>
-      <p>this text shows up</p>
       {/* the next part doesn't show up, I think because props.blocks is null for some reason */}
       {props.blocks
         ? props.blocks.map(function (block, i) {

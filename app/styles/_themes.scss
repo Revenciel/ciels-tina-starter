@@ -14,6 +14,7 @@ $n100: #f5f3f7;
 $n300: #ddd6e0;
 $n500: #ada4b2;
 $n700: #66596e;
+$n800: #43364D;
 $n900: #1e0e29;
 
 /*  Primary Colors*/
@@ -39,9 +40,11 @@ $s900: #011f27;
 /* Spacing and Layout */
 $max-width: 1200px;
 $section-padding: 24px;
+$section-gap: 24px;
 $card-padding: 16px;
 $border-weight: 1px;
 $button-padding: 12px 24px;
+$max-text-width:720px;
 
 /* Corner Radii */
 $buttonCorner: 999px;

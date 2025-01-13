@@ -1,1 +1,16 @@
 The turbo option in package-lock is an updated bundler, replaces webpack. When using NextJS 15+,. use turbopack instead of turbo. It's faster
+
+itemProps: (item) => {
+                    // This code is used to display a preview of the column content in the column list.
+                    // in the future could potentially write a function to retrieve all chunks of content (bc rn it only shows the first chunk, e.g., content of like formatting)
+                    // would only need to iterate through the second children array, and can stop after character count => 20
+
+                    if (item?.content.children[0].children[0].text.length > 20) {
+                        return { label: item?.content.children[0].children[0].text.substring(0, 20) + "...",};
+                    }
+                    if (item?.content.children[0].children[0].text.length < 1) {
+                        return { label: 'Column content' };
+                    }
+                    return { label: item?.content.children[0].children[0].text };
+                    
+                },

@@ -19,7 +19,8 @@ This is a [Tina CMS](https://tina.io/) project.
 - [ ] implement auto-generated file name when creating new pages
 - Block components
     - [ ] Add Google Calendar block
-    - [ ] Flex Content block
+    - [ ] Custom Content block
+        - [ ] Add dynamic naming to content columnsFlex
     - [ ] Testimonial block
     - [ ] Hero block
     - [ ] Hero (Carousel) block

@@ -12,7 +12,7 @@ export default function Layout({ children, rawPageData }: LayoutProps) {
   return (
     <LayoutProvider pageData={rawPageData}>
       <Header />
-      <h1>This is {rawPageData.data.page.title}</h1>
+      {/* <h1>This is {rawPageData.data.page.title}</h1> */}
       <main>{children}</main>
       <Footer />
     </LayoutProvider>
