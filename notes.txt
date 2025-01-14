@@ -14,3 +14,37 @@ itemProps: (item) => {
                     return { label: item?.content.children[0].children[0].text };
                     
                 },
+
+
+component: (props) => {
+                    console.log('PROPS');
+                    console.log(props);
+
+                    return (
+                        <div>
+                            <label htmlFor={props.input.name}>Val1</label>
+                            <input
+                                type="radio"
+                                // This will pass along props.input.onChange to set our form values as this input changes.
+                                name={props.input.name}
+                                value='First Value'
+                                {...props.input.onFocus}
+                                {...props.input.onBlur}
+                                {...props.input.onChange}
+
+                            />
+
+                            <label htmlFor={props.input.name}>Val2</label>
+                            <input
+                                type="radio"
+                                // This will pass along props.input.onChange to set our form values as this input changes.
+                                name={props.input.name}
+                                value='Second Value'
+                                {...props.input.onFocus}
+                                {...props.input.onBlur}
+                                {...props.input.onChange}
+
+                            />
+                        </div>
+                    )
+                },

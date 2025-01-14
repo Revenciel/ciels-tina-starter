@@ -1,12 +1,25 @@
 import React from "react";
-import { TinaProvider, type Template } from "tinacms";
+import { type Template } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { columnWidthToggle } from "../../fieldComponents/customColumns";
 
 export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
+    function colWidth(ratio:any){
+        
+        if (!ratio){
+            return['full', 'full', 'full', 'full'];
+        }
+
+        let array = ratio.split(" ");
+        
+        for (let i = array.length; i < 4; i++){
+            array.push(" ");
+        }
+         return array;
+    }
+    
     return (
-        <section className={"customContent" + " "}>
+        <section className={"customContent"}>
             <div className="wrapper">
                 <hgroup>
                     <h2>{data?.heading}</h2>
@@ -14,7 +27,9 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
                 </hgroup>
                 <div className="columns">
                     {data?.columns && data.columns.map((column, i) => (
-                        <div key={i} className={`col${i + 1} column`}>
+                        <div key={i} className={
+                            `${colWidth(data?.columnRatio)[i]} column`} 
+                        >
                             <TinaMarkdown content={column?.content} />
                         </div>
                     ))}
@@ -106,41 +121,39 @@ export const customContentBlockSchema: Template = {
             ],
         },
         {
-            name: 'twoColRatio',
+            name: 'columnRatio',
             type: 'string',
             label: 'Column Ratio',
+            description: 'For two- and three-column layouts only.',
             ui: {
-                component: 'columnWidthToggle',
+                component: 'select',
             },
-
             options: [
                 {
-                    label: '1:2',
-                    value: '4'
+                    label:'1:1 (Two columns)',
+                    value: 'full full',
                 },
                 {
-                    label: '1:1',
-                    value: '6',
+                    label:'1:2 (Two columns)',
+                    value: 'half full',
                 },
                 {
-                    label: '2:1',
-                    value: '8',
+                    label:'2:1 (Two columns)',
+                    value: 'full half',
+                },
+                {
+                    label:'1:1:1 (Three columns)',
+                    value: 'full full full',
+                },
+                {
+                    label:'2:1:1 (Three columns)',
+                    value: 'full half half',
+                },
+                {
+                    label:'1:1:2 (Three columns)',
+                    value: 'half half full',
                 },
             ],
         },
-        /*
-        Two column layouts:
-        1:1 // 100% 100%
-        1:2 // 50% 100% //  change 1
-        2:1 //  100% 50% // change 2
-        */
-        /* 
-        Three column layouts
-        1:1:1 // 100% 100% 100%
-        1:1:2 // 50% 50% 100% // Change 1 and 2
-        2:1:1 // 100% 50% 50% // change 2 and 3
-        
-        */
-
     ],
-};
+}

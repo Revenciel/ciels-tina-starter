@@ -41,22 +41,14 @@ section { /* Desktop */
         gap: $section-gap;
 
         .column{
-          width:100%;
           // min-width:0;
           background-color:$n100;
-        }
-
-        .col1{
-          width:100%;
-        }
-        .col2{
-          width:100%;
-        }
-        .col3{
-          width:50%;
-        }
-        .col4{
-          width:50%;
+          &.full{
+            width:100%;
+          }
+          &.half{
+            width:50%;
+          }
         }
     }
   }
