@@ -11,7 +11,7 @@ This is a [Tina CMS](https://tina.io/) project.
 
 ## TODO
 
-- [ ] fix routing issue with home page link showing /home
+- [ ] Add 404
 - [ ] Make it so nav links have different styling and don't link when they go to the current page.
 - [ ] Fix the way link destinations are generated (linkSelector.tsx)
 - [ ] Implement visual editing click-to-edit
@@ -19,8 +19,11 @@ This is a [Tina CMS](https://tina.io/) project.
 - [ ] implement auto-generated file name when creating new pages
 - Block components
     - [ ] Add Google Calendar block
-    - [ ] Custom Content block
-        - [ ] Add dynamic naming to content columnsFlex
+    - [x] Custom Content block
+        - [ ] Add options for background
+        - [ ] Split ColumnRatio field into 2 conditionally rendered fields
+        - [ ] Maybe: Show block title had block list label
+        - [ ] Maybe: Add options for centering header and/or column content
     - [ ] Testimonial block
     - [ ] Hero block
     - [ ] Hero (Carousel) block
