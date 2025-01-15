@@ -1,3 +1,148 @@
-/* Import general styling and themes*/
-@use "themes" as *;
-@use "global" as *;
+/* Import components and theme vairables*/
+@use 'themes' as *;
+@use 'cta' as *;
+@use 'header' as *;
+@use 'customContent' as *;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Themes */
+.lightTheme{
+  color: $n900;
+  background-color: $n0;
+  // link colors, visisted link colors, etc....
+}
+.neutralTheme{
+  color: $n900;
+  background-color: $n100;
+
+}
+.darkTheme{
+  color: $n300;
+  background-color: $n900;
+
+}
+
+body {
+  margin: 0; // override default
+  font: $textLg;
+}
+
+section { /* Desktop */
+  width: 100%;
+  padding: $section-padding;
+  margin: 0 auto;
+  
+  .wrapper {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $section-gap;
+
+    hgroup {
+      margin: 0;
+
+      p {
+        color: $n800;
+      }
+    }
+  }
+}
+
+section.darkTheme{
+  hgroup{
+    p{
+      color:$n500;
+    }
+  }
+}
+
+h1 {
+  font: $headingLg;
+  padding: 0;
+}
+
+h2 {
+  font: $headingMd;
+  margin: 0;
+}
+
+h3 {
+  font: $headingSm;
+}
+
+p {
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  max-width:$max-text-width;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: $section-padding;
+
+  #socials {
+    padding: 0; // override default
+
+    li {
+      display: inline;
+    }
+  }
+
+  #legal {
+    padding: 0; // override default
+
+    li {
+      display: inline;
+
+      &::after {
+        content: ' | ';
+      }
+
+      &:last-child::after {
+        content: '';
+      }
+    }
+  }
+}
+
+// THIS STYLE IS DEFAULT (see body)
+.textLg {
+  font: $textLg;
+}
+
+.textMd {
+  font: $textMd;
+}
+
+.textSm {
+  font: $textSm;
+}
+
+.textLabel {
+  font: $textLabel;
+}
+
+.textHelper {
+  font: $textHelper;
+}
+
+.hidden,
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty {
+  display: none;
+}

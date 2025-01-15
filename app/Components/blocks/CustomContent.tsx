@@ -1,19 +1,25 @@
 import React from "react";
-import { type Template } from "tinacms";
+import { type Template, wrapFieldsWithMeta } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../../tina/__generated__/client";
+// needed for Idea One in columnRatio component (currently unused)
+async function getPageData(relPath: string) {
+    const pageData = await client.queries.page({ relativePath: relPath })
 
-
-//bugs
-
-// default column ratio doesn't work
-// when creating a new band, no content shows until colratio is set
-// still think about how to separate ratios for 2 and 3 column layouts
-
-//TODO
-// add alignment option for columns
+    return pageData;
+}
 
 export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
+
+    //needed for columnRatio component idea 2 (currently unused)
+    let colNum;
+    if (data.columns) {
+        colNum = data.columns.length;
+    }
+    else colNum = 0;
+
+    // needed for columnRatio field
     function colWidth(ratio: any) {
 
         if (!ratio) {
@@ -26,7 +32,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
     }
 
     return (
-        <section className={"customContent"}>
+        <section className={"customContent " + data?.background?.theme}>
             <div className="wrapper">
                 <hgroup>
                     <h2>{data?.heading}</h2>
@@ -71,6 +77,10 @@ export const customContentBlockSchema: Template = {
                 },
             ],
             columnRatio: 'full full full full',
+            background: {
+                theme: 'lightTheme',
+                imageOpacity: 30,
+            },
         },
     },
 
@@ -103,8 +113,6 @@ export const customContentBlockSchema: Template = {
             ui: {
                 max: 4,
                 itemProps: (item) => {
-                    // console.log("ITEM?.CONTENT:");
-                    // console.log(item?.content.children[0].children[0].text.substring(0, 20) + "..."); 
                     if (item?.content?.children[0]?.children[0]?.text) {
                         if (item?.content.children[0].children[0].text.length > 20) {
                             return { label: item?.content.children[0].children[0].text.substring(0, 20) + "...", };
@@ -136,22 +144,22 @@ export const customContentBlockSchema: Template = {
                     name: 'content',
                     type: 'rich-text',
                     label: 'Content',
-                    overrides:{
-                        toolbar:[
+                    overrides: {
+                        toolbar: [
                             'heading',
-                        'link',
-                        'image',
-                        'quote',
-                        'ul',
-                        'ol',
-                        'bold',
-                        'italic',
-                        'code',
-                        'codeBlock',
-                        // 'mermaid',
-                        'table',
-                        // 'raw',
-                        'embed',
+                            'link',
+                            'image',
+                            'quote',
+                            'ul',
+                            'ol',
+                            'bold',
+                            'italic',
+                            'code',
+                            'codeBlock',
+                            // 'mermaid',
+                            'table',
+                            // 'raw',
+                            'embed',
 
                         ],
                         showFloatingToolbar: false,
@@ -165,6 +173,32 @@ export const customContentBlockSchema: Template = {
             label: 'Column Ratio',
             ui: {
                 component: 'select',
+                // IDEA TWO
+                // component: async (props) => {
+                //     if (colNum == 2 || colNum == 3){
+                //         return SelectField(props);
+                //     }
+                //     else return null;
+                // },
+
+
+                //IDEA ONE
+                // component: async (props) => {
+                //     // console.log('PROPS');
+                //     // console.log(props);
+
+                //     // console.log('RELPATH');
+                //     // console.log(props.tinaForm.relativePath); // shows correctly in console
+
+                //     let relPath = props.tinaForm.relativePath.split("/").pop();
+
+                //     let data = await getPageData(relPath);
+
+                //     console.log('PAGEDATA');
+                //     console.log(data); // also shows correctly in console
+
+                //     return SelectField(props);
+                // },
             },
             options: [
                 {
@@ -186,6 +220,66 @@ export const customContentBlockSchema: Template = {
                 {
                     label: '1:1:2 (Three columns)',
                     value: 'half half full full',
+                },
+            ],
+        },
+        {
+            name: 'background',
+            label: 'Background',
+            type: 'object',
+            description: 'Choose a background color or image.',
+            fields: [
+                {
+                    name: 'theme',
+                    type: 'string',
+                    label: 'Color',
+                    description: 'If using a background image, choose "dark."',
+                    options: [
+                        {
+                            label: 'White',
+                            value: 'lightTheme',
+                        },
+                        {
+                            label: 'Neutral',
+                            value: 'neutralTheme',
+                        },
+                        {
+                            label: 'Dark',
+                            value: 'darkTheme',
+                        },
+                    ],
+                },
+                {
+                    name: 'backgroundImage',
+                    type: 'image',
+                    label: 'Background Image',
+                },
+                {
+                    name: 'imageOpacity',
+                    type: 'number',
+                    label: 'Image Opacity',
+                    description: 'Lower opacity will make your text easier to read.',
+                    ui: {
+                        parse: (val) => Number(val),
+        
+                        // wrapping our component in wrapFieldsWithMeta renders our label & description.
+                        component: wrapFieldsWithMeta(({ field, input, meta }) => {
+                            return (
+                                <div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        step="10"
+                                        // This will pass along props.input.onChange to set our form values as this input changes.
+                                        {...input}
+                                    />
+                                    <br />
+                                    Value: {input.value}%
+                                </div>
+                            )
+                        })
+                    }
                 },
             ],
         },

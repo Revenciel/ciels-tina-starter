@@ -1,0 +1,19 @@
+@use 'themes' as *;
+
+.customContent{
+    .columns{
+        display: flex;
+        flex-direction:row;
+        gap: $section-gap;
+
+        .column{
+          // min-width:0;
+          &.full{
+            width:100%;
+          }
+          &.half{
+            width:50%;
+          }
+        }
+    }
+}
