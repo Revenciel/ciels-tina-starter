@@ -86,7 +86,13 @@ export const customContentBlockSchema: Template = {
             label: "Subheading",
             name: "subheading",
             description: "Optional - will display a subheading below the heading.",
-            toolbarOverride: ["bold", "italic", "link"],
+            overrides: {
+                toolbar:
+                    [
+                        "bold", "italic", "link"
+                    ],
+                showFloatingToolbar: false,
+            },
         },
         {
             name: 'columns',
@@ -130,8 +136,9 @@ export const customContentBlockSchema: Template = {
                     name: 'content',
                     type: 'rich-text',
                     label: 'Content',
-                    toolbarOverride: [
-                        'heading',
+                    overrides:{
+                        toolbar:[
+                            'heading',
                         'link',
                         'image',
                         'quote',
@@ -144,7 +151,11 @@ export const customContentBlockSchema: Template = {
                         // 'mermaid',
                         'table',
                         // 'raw',
-                        'embed',]
+                        'embed',
+
+                        ],
+                        showFloatingToolbar: false,
+                    }
                 },
             ],
         },

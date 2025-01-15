@@ -37,8 +37,8 @@ This is a [Tina CMS](https://tina.io/) project.
     - [ ] YouTube video
 
 - [ ] Build out blog functionality, components, and styling
-- [ ] (BLOCKED) Disable floating toolbar on heading fields
-     - Awaiting resolution of [this issue](https://github.com/tinacms/tinacms/issues/5008)
+- [x] floating toolbar on heading fields
+     - Awaiting resolution of [this issue](https://github.com/tinacms/tinacms/issues/5008) (RESOLVED)
 - [x]add roadmap for future components
 
 ## Getting Started
