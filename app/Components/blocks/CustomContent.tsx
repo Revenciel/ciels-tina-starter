@@ -3,21 +3,28 @@ import { type Template } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+
+//bugs
+
+// default column ratio doesn't work
+// when creating a new band, no content shows until colratio is set
+// still think about how to separate ratios for 2 and 3 column layouts
+
+//TODO
+// add alignment option for columns
+
 export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
-    function colWidth(ratio:any){
-        
-        if (!ratio){
-            return['full', 'full', 'full', 'full'];
+    function colWidth(ratio: any) {
+
+        if (!ratio) {
+            return ['full', 'full', 'full', 'full'];
         }
 
         let array = ratio.split(" ");
-        
-        for (let i = array.length; i < 4; i++){
-            array.push(" ");
-        }
-         return array;
+
+        return array;
     }
-    
+
     return (
         <section className={"customContent"}>
             <div className="wrapper">
@@ -28,7 +35,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
                 <div className="columns">
                     {data?.columns && data.columns.map((column, i) => (
                         <div key={i} className={
-                            `${colWidth(data?.columnRatio)[i]} column`} 
+                            `${colWidth(data?.columnRatio)[i]} column`}
                         >
                             <TinaMarkdown content={column?.content} />
                         </div>
@@ -42,9 +49,30 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
 export const customContentBlockSchema: Template = {
     name: "CustomContent",
     label: "Custom Content",
-    // ui: {
-    //   previewSrc: "/blocks/calendar.png",
-    // },
+    ui: {
+        //   previewSrc: "/blocks/calendar.png",
+        defaultItem: {
+            columns: [
+                {
+                    content: {
+                        type: 'root',
+                        children: [
+                            {
+                                type: 'p',
+                                children: [
+                                    {
+                                        type: 'text',
+                                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                },
+            ],
+            columnRatio: 'full full full full',
+        },
+    },
 
     fields: [
         {
@@ -124,34 +152,29 @@ export const customContentBlockSchema: Template = {
             name: 'columnRatio',
             type: 'string',
             label: 'Column Ratio',
-            description: 'For two- and three-column layouts only.',
             ui: {
                 component: 'select',
             },
             options: [
                 {
-                    label:'1:1 (Two columns)',
-                    value: 'full full',
+                    label: 'Equal Width Columns (Any number)',
+                    value: 'full full full full',
                 },
                 {
-                    label:'1:2 (Two columns)',
-                    value: 'half full',
+                    label: '1:2 (Two columns)',
+                    value: 'half full full full',
                 },
                 {
-                    label:'2:1 (Two columns)',
-                    value: 'full half',
+                    label: '2:1 (Two columns)',
+                    value: 'full half full half',
                 },
                 {
-                    label:'1:1:1 (Three columns)',
-                    value: 'full full full',
+                    label: '2:1:1 (Three columns)',
+                    value: 'full half half half',
                 },
                 {
-                    label:'2:1:1 (Three columns)',
-                    value: 'full half half',
-                },
-                {
-                    label:'1:1:2 (Three columns)',
-                    value: 'half half full',
+                    label: '1:1:2 (Three columns)',
+                    value: 'half half full full',
                 },
             ],
         },
