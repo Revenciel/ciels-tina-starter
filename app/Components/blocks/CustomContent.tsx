@@ -3,6 +3,10 @@ import { type Template, wrapFieldsWithMeta } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../../tina/__generated__/client";
+import type CSS from 'csstype';
+
+import { bandBg, hideHGroup } from "./HelperFunctions";
+
 // needed for Idea One in columnRatio component (currently unused)
 async function getPageData(relPath: string) {
     const pageData = await client.queries.page({ relativePath: relPath })
@@ -30,11 +34,46 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
 
         return array;
     }
+    // // return styles for band background color/image
+    // function bandBg(img: string, op: number,){
+    //     let style:CSS.Properties;
+    //     const opacity = Number(op);
+    
+    //     if (!img){
+    //         return;
+    //     }
+    //     else if (!op){
+    //         style = { backgroundImage:`url(${img})`, backgroundSize: 'cover',};
+    //     }
+    //     else{
+    //         //set dark color to match $n900
+    //         const RGBs = [30,14,41]
+    
+    //         // using linear-background image so that we can overlay the background image with a semi-transparent solid color, impossible with backgroundImage
+    //         style = {
+    //             background:`linear-gradient(rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity}),rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity})),url('${img}')`, backgroundSize:'cover',
+    //             backgroundPosition:'center',
+    //         };
+    //     }
+    //     return style;    
+    // }
+
+    // // fix for weird behavior of hidden subheadings
+    // function hide(heading:any, subheading:any){
+    //     let style = {display:'none'};
+    //     if (!heading && !subheading){
+    //         return style;
+    //     }
+    //     return;
+    // }
 
     return (
-        <section className={"customContent " + data?.background?.theme}>
+        <section
+            className={"customContent " + data?.background?.theme}
+            style={bandBg(data?.background?.backgroundImage, data.background?.imageOpacity)}
+        >
             <div className="wrapper">
-                <hgroup>
+                <hgroup style={hideHGroup(data?.heading, data?.subheading?.children.length)}>
                     <h2>{data?.heading}</h2>
                     <TinaMarkdown content={data?.subheading} />
                 </hgroup>
@@ -79,7 +118,7 @@ export const customContentBlockSchema: Template = {
             columnRatio: 'full full full full',
             background: {
                 theme: 'lightTheme',
-                imageOpacity: 30,
+                imageOpacity: 0.7,
             },
         },
     },
@@ -257,8 +296,8 @@ export const customContentBlockSchema: Template = {
                 {
                     name: 'imageOpacity',
                     type: 'number',
-                    label: 'Image Opacity',
-                    description: 'Lower opacity will make your text easier to read.',
+                    label: 'Image Transparency',
+                    description: 'Higher transparency will make your text easier to read.',
                     ui: {
                         parse: (val) => Number(val),
         
@@ -269,13 +308,13 @@ export const customContentBlockSchema: Template = {
                                     <input
                                         type="range"
                                         min="0"
-                                        max="100"
-                                        step="10"
+                                        max="1"
+                                        step="0.1"
                                         // This will pass along props.input.onChange to set our form values as this input changes.
                                         {...input}
                                     />
                                     <br />
-                                    Value: {input.value}%
+                                    Value: {input.value * 100}%
                                 </div>
                             )
                         })

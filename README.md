@@ -20,7 +20,7 @@ This is a [Tina CMS](https://tina.io/) project.
 - Block components
     - [ ] Add Google Calendar block
     - [x] Custom Content block
-        - [ ] Add options for background
+        - [x] Add options for background
         - [ ] Split ColumnRatio field into 2 conditionally rendered fields
         - [ ] Maybe: Show block title had block list label
         - [ ] Maybe: Add options for centering header and/or column content

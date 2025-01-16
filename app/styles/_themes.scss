@@ -15,15 +15,15 @@ $n300: #ddd6e0;
 $n500: #ada4b2;
 $n700: #66596e;
 $n800: #43364D;
-$n900: #1e0e29;
+$n900: #1e0e29; // This color is hard-coded into page sections with a background image
+
 
 /*  Primary Colors*/
 $p100: #f9f0ff;
 $p300: #ebcdff;
 $p500: #c186e8;
 $p700: #7d3aa7;
-$p900: #400365;
-
+$p900: #400365; 
 /*  Secondary Colors*/
 $s100: #e8fcf3;
 $s300: #b5e5dd;
@@ -40,7 +40,7 @@ $s900: #011f27;
 /* Spacing and Layout */
 $max-width: 1200px;
 $section-padding: 24px;
-$section-gap: 24px;
+$section-gap: 16px;
 $card-padding: 16px;
 $border-weight: 1px;
 $button-padding: 12px 24px;
