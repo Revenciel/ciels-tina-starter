@@ -50,12 +50,12 @@ export function linkTarget(link: any) {
     if (link.linkType === "external") {
         return '_blank';
     }
-    return '';
+    return '_self';
 };
 
 export function linkDestination(link: any) {
     if (link.linkType === "internal") {
-        let relativePath = link.relativePath.substring(13).replace('.mdx', '');
+        let relativePath = link?.relativePath?.substring(13).replace('.mdx', '');
         //This magic number comes from the character count of the domain name
         //JK I think it comes from the character count of the file path to the page
         // I should find a way to do this dynamically

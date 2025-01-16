@@ -2,7 +2,10 @@ import React from "react";
 import { type Template, wrapFieldsWithMeta } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
+import { Components } from '../mdxComponents';
+import { CtaSchema } from "../mdxComponents";
+import { videoSchema } from "../mdxComponents";
+import { webPageSchema } from "../mdxComponents";
 import { bandBg, hideHGroup, createID } from "./HelperFunctions";
 
 // // needed for Idea One in columnRatio component (currently unused)
@@ -61,7 +64,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
                         <div key={i} className={
                             `${colWidth(data?.columnRatio)[i]} column of${data?.columns?.length}`}
                         >
-                            <TinaMarkdown content={column?.content} />
+                            <TinaMarkdown content={column?.content} components={Components}/>
                         </div>
                     ))}
                 </div>
@@ -181,7 +184,12 @@ export const customContentBlockSchema: Template = {
 
                         ],
                         showFloatingToolbar: false,
-                    }
+                    },
+                    templates: [
+                        CtaSchema,
+                        videoSchema,
+                        webPageSchema,
+                      ],
                 },
             ],
         },
