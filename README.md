@@ -31,10 +31,12 @@ This is a [Tina CMS](https://tina.io/) project.
     - [ ] Timeline block
     - [ ] Contact form block
 - Embedded Components
-    - [ ] Webpage / Google Form
+    - [x] Webpage / Google Form
+        - [ ] Test and style
     - [ ] Call to Action
-    - [ ] Image (with more options)
+        - [ ] Style
     - [ ] YouTube video
+        - [ ] Test and style
 
 - [ ] Build out blog functionality, components, and styling
 - [x] floating toolbar on heading fields
