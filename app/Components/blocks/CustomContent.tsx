@@ -2,26 +2,17 @@ import React from "react";
 import { type Template, wrapFieldsWithMeta } from "tinacms";
 import { PageBlocksCustomContent } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import client from "../../../tina/__generated__/client";
-import type CSS from 'csstype';
 
-import { bandBg, hideHGroup } from "./HelperFunctions";
+import { bandBg, hideHGroup, createID } from "./HelperFunctions";
 
-// needed for Idea One in columnRatio component (currently unused)
-async function getPageData(relPath: string) {
-    const pageData = await client.queries.page({ relativePath: relPath })
+// // needed for Idea One in columnRatio component (currently unused)
+// async function getPageData(relPath: string) {
+//     const pageData = await client.queries.page({ relativePath: relPath })
 
-    return pageData;
-}
+//     return pageData;
+// }
 
 export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
-
-    //needed for columnRatio component idea 2 (currently unused)
-    let colNum;
-    if (data.columns) {
-        colNum = data.columns.length;
-    }
-    else colNum = 0;
 
     // needed for columnRatio field
     function colWidth(ratio: any) {
@@ -34,43 +25,31 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
 
         return array;
     }
-    // // return styles for band background color/image
-    // function bandBg(img: string, op: number,){
-    //     let style:CSS.Properties;
-    //     const opacity = Number(op);
-    
-    //     if (!img){
-    //         return;
-    //     }
-    //     else if (!op){
-    //         style = { backgroundImage:`url(${img})`, backgroundSize: 'cover',};
-    //     }
-    //     else{
-    //         //set dark color to match $n900
-    //         const RGBs = [30,14,41]
-    
-    //         // using linear-background image so that we can overlay the background image with a semi-transparent solid color, impossible with backgroundImage
-    //         style = {
-    //             background:`linear-gradient(rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity}),rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity})),url('${img}')`, backgroundSize:'cover',
-    //             backgroundPosition:'center',
-    //         };
-    //     }
-    //     return style;    
-    // }
 
-    // // fix for weird behavior of hidden subheadings
-    // function hide(heading:any, subheading:any){
-    //     let style = {display:'none'};
-    //     if (!heading && !subheading){
-    //         return style;
+    // //needed for columnRatio component idea 2 (currently unused)
+    // let colNum;
+    // if (data.columns) {
+    //     colNum = data.columns.length;
+    // }
+    // else colNum = 0;
+
+    // // needed for columnRatio field
+    // function colWidth(ratio: any) {
+
+    //     if (!ratio) {
+    //         return ['full', 'full', 'full', 'full'];
     //     }
-    //     return;
+
+    //     let array = ratio.split(" ");
+
+    //     return array;
     // }
 
     return (
         <section
             className={"customContent " + data?.background?.theme}
             style={bandBg(data?.background?.backgroundImage, data.background?.imageOpacity)}
+            id={createID(data?.heading)}
         >
             <div className="wrapper">
                 <hgroup style={hideHGroup(data?.heading, data?.subheading?.children.length)}>
@@ -80,7 +59,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
                 <div className="columns">
                     {data?.columns && data.columns.map((column, i) => (
                         <div key={i} className={
-                            `${colWidth(data?.columnRatio)[i]} column`}
+                            `${colWidth(data?.columnRatio)[i]} column of${data?.columns?.length}`}
                         >
                             <TinaMarkdown content={column?.content} />
                         </div>
@@ -300,7 +279,7 @@ export const customContentBlockSchema: Template = {
                     description: 'Higher transparency will make your text easier to read.',
                     ui: {
                         parse: (val) => Number(val),
-        
+
                         // wrapping our component in wrapFieldsWithMeta renders our label & description.
                         component: wrapFieldsWithMeta(({ field, input, meta }) => {
                             return (

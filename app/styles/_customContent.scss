@@ -1,19 +1,40 @@
-@use 'themes' as *;
+@use "themes" as *;
 
-.customContent{
-    .columns{
-        display: flex;
-        flex-direction:row;
-        gap: $section-gap;
+.customContent {
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $section-gap;
 
-        .column{
-          // min-width:0;
-          &.full{
-            width:100%;
-          }
-          &.half{
-            width:50%;
-          }
-        }
+    .column {
+      flex-basis: 0;
+      background-color: aliceblue;
+
+      @include tablet {
+        flex-basis: calc(50% - calc(0.5 * $section-gap));
+      }
+
+      @include mobile {
+        flex-basis: 100%;
+      }
+
+      &.full {
+        flex-grow: 2;
+      }
+
+      &.half {
+        flex-grow: 1;
+      }
     }
+    
+    .column.of2 {
+      @include tablet {
+        flex-basis: 0;
+      }
+      @include mobile {
+        flex-basis:100%;
+      }
+    }
+  }
 }

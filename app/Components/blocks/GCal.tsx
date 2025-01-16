@@ -2,7 +2,7 @@ import React from "react";
 import type { Template } from "tinacms";
 import { PageBlocksGCal } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { bandBg, hideHGroup } from "./HelperFunctions";
+import { bandBg, hideHGroup, createID } from "./HelperFunctions";
 import { wrapFieldsWithMeta } from "tinacms";
 
 export const GCal = ({ data }: { data: PageBlocksGCal }) => {
@@ -10,6 +10,7 @@ export const GCal = ({ data }: { data: PageBlocksGCal }) => {
     <section
       className={"gCal " + data?.background?.theme}
       style={bandBg(data.background?.backgroundImage, data.background?.imageOpacity)}
+      id={createID(data?.heading)}
     >
       <div className="wrapper">
         <hgroup style={hideHGroup(data?.heading, data?.subheading?.children.length)}>

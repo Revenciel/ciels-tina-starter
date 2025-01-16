@@ -1,3 +1,14 @@
+import type CSS from 'csstype';
+
+
+//Create band id
+export function createID(props:any){
+    if (props){
+        return props;
+    }
+    else return;
+}
+
 // return styles for band background color/image
     export function bandBg(img: string, op: number,){
         let style:CSS.Properties;

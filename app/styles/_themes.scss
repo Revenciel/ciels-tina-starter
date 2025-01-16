@@ -1,6 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
 
+/* Break Points */
+@mixin mobile {
+    @media (max-width: 767) {
+        @content;
+    }
+ }
+ 
+ @mixin tablet {
+    @media (max-width: 1024) {
+        @content;
+    }
+ }
+
 /* TODO */
 // Add link colors for all themes
 // add pop theme
@@ -36,6 +49,9 @@ $s900: #011f27;
 // $warning: #000;
 // $error: #000;
 // $info: #000;
+
+
+
 
 /* Spacing and Layout */
 $max-width: 1200px;

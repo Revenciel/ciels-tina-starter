@@ -18,7 +18,7 @@ This is a [Tina CMS](https://tina.io/) project.
 - [x] Implement block-based editing
 - [ ] implement auto-generated file name when creating new pages
 - Block components
-    - [ ] Add Google Calendar block
+    - [x] Add Google Calendar block
     - [x] Custom Content block
         - [x] Add options for background
         - [ ] Split ColumnRatio field into 2 conditionally rendered fields
