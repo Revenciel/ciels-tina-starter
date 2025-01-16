@@ -5,7 +5,11 @@ This is a [Tina CMS](https://tina.io/) project.
 - Using SCSS for organized styling
 - Theme easily configurable using \_themes.scss, with all (or most) colors, fonts, and spacing using variables
 - Starter components that I find useful for any small business or non-profit website, including:
-  - Header component with user-friendly process for adding links
+  - Header component with user-friendly process for adding links internal or external links
+  - Custom Content block
+    - Display between 1-4 columns, each of which can contain rich-text, images, and YouTube embeds.
+    - Customize background according to theme options, or add a backgound image.
+  - Google Calendar embed block
   - Footer
   - _More components coming soon_
 
@@ -32,10 +36,10 @@ This is a [Tina CMS](https://tina.io/) project.
     - [ ] Contact form block
 - Embedded Components
     - [x] Webpage / Google Form
-        - [ ] Test and style
-    - [ ] Call to Action
+        - [x] Test and style
+    - [x] Call to Action
         - [ ] Style
-    - [ ] YouTube video
+    - [x] YouTube video
         - [ ] Test and style
 
 - [ ] Build out blog functionality, components, and styling
