@@ -40,7 +40,7 @@ This is a [Tina CMS](https://tina.io/) project.
     - [x] Call to Action
         - [x] Style
     - [x] YouTube video
-        - [ ] Test and style
+        - [x] Test and style
 
 - [ ] Build out blog functionality, components, and styling
 - [x] floating toolbar on heading fields

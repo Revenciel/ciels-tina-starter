@@ -1,9 +1,11 @@
 /* Import components and theme vairables*/
-@use "themes" as *;
-@use "cta" as *;
-@use "header" as *;
-@use "customContent" as *;
-@use "gCal" as *;
+@use 'themes' as *;
+@use 'header' as *;
+@use 'customContent' as *;
+@use 'gCal' as *;
+@use 'mdxComponents/cta' as *;
+@use 'mdxComponents/youtube' as *;
+@use 'mdxComponents/webpage' as *;
 
 *,
 *:before,
@@ -38,7 +40,8 @@ section {
   width: 100%;
   padding: $section-padding;
   margin: 0 auto;
-  
+  transition: padding ease 0.5s;
+
   @include tablet {
     padding: $section-padding-tablet;
   }
@@ -121,11 +124,11 @@ footer {
       display: inline;
 
       &::after {
-        content: " | ";
+        content: ' | ';
       }
 
       &:last-child::after {
-        content: "";
+        content: '';
       }
     }
   }

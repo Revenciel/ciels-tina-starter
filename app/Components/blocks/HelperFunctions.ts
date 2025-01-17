@@ -1,5 +1,9 @@
 import type CSS from 'csstype';
 
+export function iframeRatio(props:number){
+    let style:CSS.Properties;
+    return style = {paddingTop: `${props}%`}
+}
 
 //Create band id
 export function createID(props:any){

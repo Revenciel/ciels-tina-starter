@@ -43,7 +43,7 @@ export default function Header() {
           <a
             href={linkDestination(siteData?.cta)}
             target={linkTarget(siteData?.cta)}
-            className={showCTA() + " " + "primaryCTA"}
+            className={showCTA() + " " + "cta primary"}
           >
             {siteData?.cta?.anchor}
           </a>

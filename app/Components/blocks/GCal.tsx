@@ -124,7 +124,7 @@ export const gCalBlockSchema: Template = {
                     {...input}
                   />
                   <br />
-                  Value: {input.value * 100}%
+                  {input.value * 100}%
                 </div>
               )
             })

@@ -1,5 +1,6 @@
-import type { Template } from "tinacms";
+import { type Template, wrapFieldsWithMeta } from "tinacms";
 import { internalLink, externalLink, linkDestination, linkTarget } from "../fieldComponents/linkSelector";
+import { iframeRatio } from "./blocks/HelperFunctions";
 
 export const Components = {
   cta: props => {
@@ -26,15 +27,18 @@ export const Components = {
     };
 
     return (
-      <div className="video">
+      <div className="youtube">
         <iframe src={youtube_parser(props.url)} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
       </div>
     );
   },
 
   webPage: props => {
+
+
+
     return (
-      <iframe src={props.url} height={props.height + 'px'} />
+        <iframe className='webEmbed' src={props?.url} height={props?.height + 'px'} />
     );
   },
 }
@@ -42,6 +46,11 @@ export const Components = {
 export const webPageSchema: Template = {
   name: 'webPage',
   label: 'Web Page',
+  ui:{
+    defaultItem:{
+      height:400,
+    }
+  },
   fields: [
     {
       name: 'url',

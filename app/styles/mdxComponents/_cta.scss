@@ -1,14 +1,14 @@
-@use "themes" as *;
+@use "../themes" as *;
 
 //applied directly to <a> tag
 .cta {
   padding: $button-padding;
   text-decoration: none;
-  border-radius: $buttonCorner;
+  border-radius: $button-corner;
   width: fit-content;
   font: $headingSm;
-  margin-top: 8px;
-  margin-bottom:8px;
+  margin-top: $subsection-gap;
+  margin-bottom:$subsection-gap;
 
   &.primary {
     background-color: $p700;
