@@ -17,7 +17,6 @@ This is a [Tina CMS](https://tina.io/) project.
 
 - [ ] Add 404
 - [ ] Make it so nav links have different styling and don't link when they go to the current page.
-- [ ] Fix the way link destinations are generated (linkSelector.tsx)
 - [ ] Implement visual editing click-to-edit
 - [x] Implement block-based editing
 - [ ] implement auto-generated file name when creating new pages
@@ -33,14 +32,10 @@ This is a [Tina CMS](https://tina.io/) project.
     - [ ] Hero (Carousel) block
     - [ ] Image carousel block
     - [ ] Timeline block
-    - [ ] Contact form block
 - Embedded Components
     - [x] Webpage / Google Form
-        - [ ] Test and style
     - [x] Call to Action
-        - [x] Style
     - [x] YouTube video
-        - [x] Test and style
 
 - [ ] Build out blog functionality, components, and styling
 - [x] floating toolbar on heading fields
