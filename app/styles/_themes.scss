@@ -24,24 +24,32 @@
 /*  Neutral Colors*/
 $n0: #fff;
 $n100: #f5f3f7;
+$n200: #EAE5EC;
 $n300: #ddd6e0;
+$n400: #C4BCC9;
 $n500: #ada4b2;
+$n600: #8E8394;
 $n700: #66596e;
 $n800: #43364D;
+$n850: #30223A;
 $n900: #1e0e29; // This color is hard-coded into page sections with a background image
 
 
 /*  Primary Colors*/
 $p100: #f9f0ff;
-$p300: #ebcdff;
+$p300: #ebcdff; // CTA dark theme 
+$p400: #D5A9F3;// CTA hover dark theme
 $p500: #c186e8;
-$p700: #7d3aa7;
-$p900: #400365; 
+$p600: #9E60C7; // CTA hover
+$p700: #7d3aa7; // CTA
+$p900: #400365;
 /*  Secondary Colors*/
 $s100: #e8fcf3;
-$s300: #b5e5dd;
-$s600: #6fb7b6;
-$s700: #26646d;
+$s300: #b5e5dd; // CTA secondary dark theme
+$s400: #91CDC9; // CTA secondary hover dark theme
+$s500: #6FB7B6; 
+$s600: #4A8D91; // CTA secondary hover
+$s700: #26646d; // CTA secondary
 $s900: #011f27;
 
 /* Semantic Colors */
@@ -50,21 +58,20 @@ $s900: #011f27;
 // $error: #000;
 // $info: #000;
 
-
-
-
 /* Spacing and Layout */
 $max-width: 1200px;
 $section-padding: 24px;
 $section-gap: 16px;
+$subsection-gap: 8px;
 $card-padding: 16px;
 $border-weight: 1px;
 $button-padding: 12px 24px;
 $max-text-width:720px;
 
-/* Corner Radii */
+/* Borders */
 $buttonCorner: 999px;
 $cardCorner: 16px;
+$border-width: 2px;
 
 /* Typography */
 $headingLg: bold 40px "DM Serif Display", serif;

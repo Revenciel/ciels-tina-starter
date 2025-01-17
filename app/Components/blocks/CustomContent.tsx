@@ -64,7 +64,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
                         <div key={i} className={
                             `${colWidth(data?.columnRatio)[i]} column of${data?.columns?.length}`}
                         >
-                            <TinaMarkdown content={column?.content} components={Components}/>
+                            <TinaMarkdown content={column?.content} components={Components} />
                         </div>
                     ))}
                 </div>
@@ -78,6 +78,13 @@ export const customContentBlockSchema: Template = {
     label: "Custom Content",
     ui: {
         //   previewSrc: "/blocks/calendar.png",
+        itemProps: (item) => {
+            if (item?.heading) {
+                return { label: item.heading}
+            }
+            else return { label: 'Custom content' };
+
+        },
         defaultItem: {
             columns: [
                 {
@@ -189,7 +196,7 @@ export const customContentBlockSchema: Template = {
                         CtaSchema,
                         videoSchema,
                         webPageSchema,
-                      ],
+                    ],
                 },
             ],
         },

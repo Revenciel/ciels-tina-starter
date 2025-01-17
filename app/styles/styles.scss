@@ -13,19 +13,19 @@
 
 /* Themes */
 .lightTheme{
-  color: $n900;
+  color: $n850;
   background-color: $n0;
   // link colors, visisted link colors, etc....
 }
 
 .neutralTheme{
-  color: $n900;
+  color: $n850;
   background-color: $n100;
 }
 
 .darkTheme{
   color: $n300;
-  background-color: $n900;
+  background-color: $n850;
 }
 
 body {
@@ -76,6 +76,7 @@ h2 {
 
 h3 {
   font: $headingSm;
+  margin:0;
 }
 
 p {

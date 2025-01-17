@@ -5,7 +5,7 @@ export const Components = {
   cta: props => {
 
     return (
-      <a href={linkDestination(props)} className={"CTA " + props.style.toLowerCase()} target={linkTarget(props.linkType)}>
+      <a href={linkDestination(props)} className={"cta " + props.style.toLowerCase()} target={linkTarget(props)}>
         {props.anchor}
       </a>
     );

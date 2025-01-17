@@ -1,34 +1,75 @@
 @use "themes" as *;
 
-@mixin cta {
-    padding: $button-padding;
-    text-decoration: none;
-    border-radius: $buttonCorner;
-    font: $headingSm;
-}
-
 //applied directly to <a> tag
-.primaryCTA {
-    background-color: $s900;
+.cta {
+  padding: $button-padding;
+  text-decoration: none;
+  border-radius: $buttonCorner;
+  width: fit-content;
+  font: $headingSm;
+  margin-top: 8px;
+  margin-bottom:8px;
+
+  &.primary {
+    background-color: $p700;
     color: $n0;
-    @include cta;
 
-    // &.neutralTheme{
-    //     background-color:;
-    //     color:;
-    // }
-    // &.darkTheme{
+    &:hover {
+      background-color: $p600;
+    }
+  }
 
-    // }
+  &.secondary {
+    background-color: transparent;
+    color: $p700;
+    border: $border-width solid $p700 ;
+
+    &:hover {
+      color: $p600;
+      border-color: $p600;
+    }
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: $p700;
+    margin:0;
+
+    &:hover {
+      color: $p600;
+    }
+  }
 }
 
-.secondaryCTA {
-    background-color: $n900;
-    color: $n0;
-    @include cta;
-}
+.darkTheme {
+  .cta {
+    &.primary {
+      background-color: $p400;
+      color: $n850;
 
-.tertiaryCTA {
-    color: $s900;
-    @include cta;
+      &:hover {
+        background-color: $p500;
+        color:$n850;
+      }
+    }
+
+    &.secondary {
+      color: $p400;
+      border-color: $p400;
+
+      &:hover {
+        color: $p500;
+        border-color: $p500;
+      }
+    }
+
+    &.tertiary {
+      color: $p400;
+      padding:0;
+
+      &:hover {
+        color: $p500;
+      }
+    }
+  }
 }

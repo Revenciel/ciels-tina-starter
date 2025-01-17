@@ -36,9 +36,9 @@ This is a [Tina CMS](https://tina.io/) project.
     - [ ] Contact form block
 - Embedded Components
     - [x] Webpage / Google Form
-        - [x] Test and style
+        - [ ] Test and style
     - [x] Call to Action
-        - [ ] Style
+        - [x] Style
     - [x] YouTube video
         - [ ] Test and style
 
