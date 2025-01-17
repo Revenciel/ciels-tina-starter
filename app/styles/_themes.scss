@@ -60,7 +60,9 @@ $s900: #011f27;
 
 /* Spacing and Layout */
 $max-width: 1200px;
-$section-padding: 24px;
+$section-padding: 48px;
+$section-padding-tablet:32px;
+$section-padding-mobile:24px;
 $section-gap: 16px;
 $subsection-gap: 8px;
 $card-padding: 16px;

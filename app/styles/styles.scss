@@ -1,9 +1,9 @@
 /* Import components and theme vairables*/
-@use 'themes' as *;
-@use 'cta' as *;
-@use 'header' as *;
-@use 'customContent' as *;
-@use 'gCal' as *;
+@use "themes" as *;
+@use "cta" as *;
+@use "header" as *;
+@use "customContent" as *;
+@use "gCal" as *;
 
 *,
 *:before,
@@ -12,18 +12,18 @@
 }
 
 /* Themes */
-.lightTheme{
+.lightTheme {
   color: $n850;
   background-color: $n0;
   // link colors, visisted link colors, etc....
 }
 
-.neutralTheme{
+.neutralTheme {
   color: $n850;
   background-color: $n100;
 }
 
-.darkTheme{
+.darkTheme {
   color: $n300;
   background-color: $n850;
 }
@@ -33,11 +33,19 @@ body {
   font: $textLg;
 }
 
-section { /* Desktop */
+section {
+  /* Desktop */
   width: 100%;
   padding: $section-padding;
   margin: 0 auto;
   
+  @include tablet {
+    padding: $section-padding-tablet;
+  }
+  @include mobile {
+    padding: $section-padding-mobile;
+  }
+
   .wrapper {
     width: 100%;
     max-width: $max-width;
@@ -56,10 +64,10 @@ section { /* Desktop */
   }
 }
 
-section.darkTheme{
-  hgroup{
-    p{
-      color:$n500;
+section.darkTheme {
+  hgroup {
+    p {
+      color: $n500;
     }
   }
 }
@@ -76,15 +84,21 @@ h2 {
 
 h3 {
   font: $headingSm;
-  margin:0;
+  margin: 0;
 }
 
 p {
   margin: 0;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  max-width:$max-text-width;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width: $max-text-width;
 }
 
 footer {
@@ -107,11 +121,11 @@ footer {
       display: inline;
 
       &::after {
-        content: ' | ';
+        content: " | ";
       }
 
       &:last-child::after {
-        content: '';
+        content: "";
       }
     }
   }
@@ -137,8 +151,6 @@ footer {
 .textHelper {
   font: $textHelper;
 }
-
-
 
 .hidden,
 p:empty,

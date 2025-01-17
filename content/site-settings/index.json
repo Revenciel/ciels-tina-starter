@@ -16,11 +16,11 @@
     }
   ],
   "cta": {
-    "showCTA": false,
-    "linkType": "internal",
+    "showCTA": true,
+    "linkType": "external",
     "relativePath": "content/page/home.mdx",
-    "url": "https://www.example.com",
-    "anchor": "link"
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "anchor": "Link"
   },
   "footer": {
     "socials": [
