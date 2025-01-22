@@ -15,17 +15,18 @@ This is a [Tina CMS](https://tina.io/) project.
 
 ## TODO
 
-- [ ] Add 404
+- [ ] Add 404 (Test on live build before deciding this doesn't work yet)
 - [ ] Make it so nav links have different styling and don't link when they go to the current page.
 - [ ] Implement visual editing click-to-edit
 - [x] Implement block-based editing
-- [ ] implement auto-generated file name when creating new pages
+- [x] implement auto-generated file name when creating new pages
+    - [ ] Check error when editing a block in a new page
+- [ ] implement collection search in admin
 - Block components
     - [x] Add Google Calendar block
     - [x] Custom Content block
         - [x] Add options for background
         - [ ] Split ColumnRatio field into 2 conditionally rendered fields
-        - [ ] Maybe: Show block title had block list label
         - [ ] Maybe: Add options for centering header and/or column content
     - [ ] Testimonial block
     - [ ] Hero block

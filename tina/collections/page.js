@@ -11,17 +11,11 @@ export default {
   path: "content/page",
   format: "mdx",
   fields: [
-    // {
-    //   name: "body",
-    //   label: "Main Content",
-    //   type: "rich-text",
-    //   isBody: true,
-    // },
     {
       name: "title",
       label: "Title",
       type: "string",
-      // required: true,
+      required: true,
     },
     {
       name: "blocks",
@@ -40,6 +34,16 @@ export default {
         return `/`;
       }
       return ("/" + document._sys.filename);
+    },
+    filename: {
+      slugify: values => {
+        if (values?.parentPage) {
+          //18 is character index to remove src/content/pages/
+          return values.parentPage.substring(17).replace('.mdx', '') + '/' + `${values?.title?.toLowerCase().replace(/[^a-zA-Z\d_\-\s]/g, '').replace(/\s/g, '-',)}`
+        };
+
+        return `${values?.title?.toLowerCase().replace(/[^a-zA-Z\d_\-\s]/g, '').replace(/\s/g, '-',)}`
+      },
     },
   },
 };
