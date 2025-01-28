@@ -1,5 +1,5 @@
 import { type Template } from "tinacms";
-import { internalLink, externalLink, linkDestination, linkTarget } from "../fieldComponents/linkSelector";
+import { InternalLink, ExternalLink, linkDestination, linkTarget } from "../fieldComponents/linkSelector";
 
 export const Components = {
   cta: props => {
@@ -117,7 +117,7 @@ export const CtaSchema: Template = {
       label: "Page to link to",
       collections: ['page'],
       ui: {
-        component: internalLink,
+        component: InternalLink,
       },
     },
     {
@@ -125,7 +125,7 @@ export const CtaSchema: Template = {
       name: "url",
       label: "Link URL",
       ui: {
-        component: externalLink,
+        component: ExternalLink,
       },
     },
     {

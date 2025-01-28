@@ -3,7 +3,7 @@ import { TextField, ReferenceField } from "tinacms";
 import React from "react";
 
 // FIELD COMPONENTS (for use in the schema of objects that have link fields)
-export const internalLink = (props) => {
+export const InternalLink = (props) => {
     const typeOfLink = React.useMemo(() => {
       let fieldName = props.field.name;
       fieldName = fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
@@ -17,7 +17,7 @@ export const internalLink = (props) => {
     return ReferenceField(props);
   };
   
-  export const externalLink = (props) => {
+  export const ExternalLink = (props) => {
   
     const typeOfLink = React.useMemo(() => {
       let fieldName = props.field.name;
