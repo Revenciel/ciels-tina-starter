@@ -2,7 +2,7 @@
  * @type {import('tinacms').Collection}
  */
 
-import { internalLink, externalLink } from "../../app/fieldComponents/linkSelector";
+import { InternalLink, ExternalLink } from "../../app/fieldComponents/linkSelector";
 
 export default {
     name: "siteConfig",
@@ -90,7 +90,7 @@ export default {
                 label: "Page to link to",
                 collections: ['page'],
                 ui: {
-                  component: internalLink,
+                  component: InternalLink,
                 },
               },
               {
@@ -98,7 +98,7 @@ export default {
                 name: "url",
                 label: "Link URL",
                 ui: {
-                  component: externalLink,
+                  component: ExternalLink,
                 },
               },
               {
