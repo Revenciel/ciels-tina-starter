@@ -112,7 +112,7 @@ export const gCalBlockSchema: Template = {
             parse: (val) => Number(val),
 
             // wrapping our component in wrapFieldsWithMeta renders our label & description.
-            component: wrapFieldsWithMeta(({ field, input, meta }) => {
+            component: wrapFieldsWithMeta(({ input }) => {
               return (
                 <div>
                   <input

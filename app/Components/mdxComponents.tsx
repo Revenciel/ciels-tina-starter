@@ -1,6 +1,5 @@
-import { type Template, wrapFieldsWithMeta } from "tinacms";
+import { type Template } from "tinacms";
 import { internalLink, externalLink, linkDestination, linkTarget } from "../fieldComponents/linkSelector";
-import { iframeRatio } from "./blocks/HelperFunctions";
 
 export const Components = {
   cta: props => {
@@ -24,7 +23,7 @@ export const Components = {
       else {
         return;
       }
-    };
+    }
 
     return (
       <div className="youtube">

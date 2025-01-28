@@ -1,5 +1,5 @@
 import siteData from "../../content/site-settings/index.json"
-import { TextField, ReferenceField, ButtonToggle } from "tinacms";
+import { TextField, ReferenceField } from "tinacms";
 import React from "react";
 
 // FIELD COMPONENTS (for use in the schema of objects that have link fields)
@@ -51,7 +51,7 @@ export function linkTarget(link: any) {
         return '_blank';
     }
     return '_self';
-};
+}
 
 export function linkDestination(link: any) {
     if (link.linkType === "internal") {
