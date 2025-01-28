@@ -22,7 +22,8 @@ export function createID(props:any){
             return;
         }
         else if (!op){
-            style = { backgroundImage:`url(${img})`, backgroundSize: 'cover',};
+            style = { backgroundImage:`url(${img})`, backgroundSize: 'cover'}
+            return style;
         }
         else{
             //set dark color to match $n900
@@ -32,9 +33,9 @@ export function createID(props:any){
             style = {
                 background:`linear-gradient(rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity}),rgba(${RGBs[0]},${RGBs[1]},${RGBs[2]},${opacity})),url('${img}')`, backgroundSize:'cover',
                 backgroundPosition:'center',
-            };
+            }
+            return style;
         }
-        return style;    
     }
 
     // fix for weird behavior of hidden headngs
