@@ -9,7 +9,7 @@ export const GCal = ({ data }: { data: PageBlocksGCal }) => {
   return (
     <section
       className={"gCal " + data?.background?.theme}
-      style={bandBg(data.background?.backgroundImage as string, data.background?.imageOpacity as number)}
+      style={bandBg(data?.background?.backgroundImage, data.background?.imageOpacity)}
       id={createID(data?.heading)}
     >
       <div className="wrapper">

@@ -15,7 +15,7 @@ export function createID(props: any) {
 }
 
 // return styles for band background color/image
-export function bandBg(img: string, op: number) {
+export function bandBg(img: string | null | undefined, op: number | undefined | null) {
     let style: CSS.Properties;
     const opacity = Number(op);
 
