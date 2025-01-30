@@ -23,7 +23,6 @@
     ],
     "strictNullChecks": true,
     "target": "ES2017",
-    "typeRoots": ["node_modules/@types", "node_modules/csstype"],
   },
   "include": [
     "next-env.d.ts",
