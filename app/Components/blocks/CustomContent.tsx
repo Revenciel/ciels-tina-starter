@@ -51,7 +51,7 @@ export const CustomContent = ({ data }: { data: PageBlocksCustomContent }) => {
     return (
         <section
             className={"customContent " + data?.background?.theme}
-            style={bandBg(data?.background?.backgroundImage, data.background?.imageOpacity)}
+            style={bandBg(data?.background?.backgroundImage as string, data.background?.imageOpacity as number)}
             id={createID(data?.heading)}
         >
             <div className="wrapper">

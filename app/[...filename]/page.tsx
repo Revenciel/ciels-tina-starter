@@ -3,13 +3,12 @@ import client from "../../tina/__generated__/client";
 import ClientPage from "./client-page";
 import Layout from "../Components/Layout/Layout";
 import siteData from "../../content/site-settings/index.json";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata} from "next";
 
 export async function generateMetadata({
-  params,
+  params, 
 }: {
   params: { filename: string[] };
-  parent: ResolvingMetadata;
 }): Promise<Metadata> {
   const data = await client.queries.page({
     relativePath: `${params.filename}.mdx`,
